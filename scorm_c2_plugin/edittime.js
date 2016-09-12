@@ -1,4 +1,4 @@
-﻿function GetPluginSettings()
+function GetPluginSettings()
 {
 	return {
 		"name":			"Scorm C2",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
@@ -30,28 +30,26 @@
 ////////////////////////////////////////
 // Conditions
 
-AddCondition(0, cf_none, "Is scorm initialised", "Initialisation", "Is scorm initialised", "Verifie si la connection au tracker est établie", "isScormInitialised");
-AddCondition(1, cf_none, "Is scorm initialising", "Initialisation", "Is scorm initialising", "Verifie si la connection au tracker est en cours...", "isScormInitialising");
-AddCondition(2, cf_none, "Is scorm on error", "Error handling", "Is scorm on error", "Verifie si une erreur a eu lieu", "isScormOnError");
+AddCondition(0, cf_none, "Is scorm initialised", "Initialisation", "Is scorm initialised", "Check if the game is connected to the LMS", "isScormInitialised");
+AddCondition(1, cf_none, "Is scorm on error", "Error handling", "Is scorm on error", "Check if an error occured", "isScormOnError");
 
 ////////////////////////////////////////
 // Actions
 
-AddAction(0, af_none, "Initialise LMS", "Initialisation", "Initialise LMS", "Initialise la connection au tracker", "initialiseLMS");
-AddStringParam("Name", "Name of the scorm value to set.");
-AddStringParam("Value", "The value.");
-AddAction(1, af_none, "Set LMS Value", "Usage", "Set LMS Value {0} - {1}", "Met à jour une valeur sur le LMS (voir les identifiants possible dans la doc de SCORM 1.2)", "setLMSValue");
-AddAction(2, af_none, "Do LMS Commit", "Usage", "Do LMS Commit", "Commit les valeurs mises à jour sur le LMS", "doLMSCommit");
+AddAction(0, af_none, "Initialise LMS", "Initialisation", "Initialise LMS", "Initialise connexion to the LMS", "initialiseLMS");
+AddStringParam("Name", "Name of the value to set.");
+AddStringParam("Value", "The value");
+AddAction(1, af_none, "Set LMS Value", "Usage", "Set LMS Value {0} - {1}", "Update a value on the LMS (refer on the Scorm 1.2 / 2004 documentation for possible values)", "setLMSValue");
+AddAction(2, af_none, "Do LMS Commit", "Usage", "Do LMS Commit", "Commit the updated values on the LMS server side", "doLMSCommit");
+AddAction(3, af_none, "Terminate", "Initialisation", "Terminate", "Close the connexion with the LMS", "doTerminate");
 
 ////////////////////////////////////////
 // Expressions
 
-AddExpression(0, ef_return_string, "Initialisation", "Error handling", "getLastError", "Retourne la dernière erreur de SCORM");
-AddExpression(1, ef_return_number, "Initialisation", "Error handling", "getLastErrorID", "Retourne l'ID de la dernière erreur de SCORM");
-AddNumberParam("Temps", "Le temps à convertir (en millisecondes)");
-AddExpression(2, ef_return_string, "Initialisation", "Usage", "formatTimeForScorm", "Retourne le temps passé en parametre (en millisecondes), au format SCORM 1.2");
-AddStringParam("Name", "Name of the scorm value to get.");
-AddExpression(3, ef_return_string, "Initialisation", "Usage", "getLMSValue", "Retourne la valeur dont l'identifiant est passé en parametre");
+AddExpression(0, ef_return_string, "Initialisation", "Error handling", "getLastError", "Get the last Scorm error message");
+AddExpression(1, ef_return_number, "Initialisation", "Error handling", "getLastErrorID", "Get the last Scorm error ID");
+AddStringParam("Name", "Name of the value to get.");
+AddExpression(2, ef_return_string, "Initialisation", "Usage", "getLMSValue", "Get a value from the LMS (refer on the Scorm 1.2 / 2004 documentation for possible values)");
 
 ////////////////////////////////////////
 ACESDone();
