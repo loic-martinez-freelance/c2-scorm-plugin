@@ -296,15 +296,15 @@ cr.plugins_.scormc2 = function(runtime) {
 
     } else { //If SCORM version not specified by user, look for APIs
 
-      if (win.API_1484_11) { //SCORM 2004-specific API.
+      if (win["API_1484_11"]) { //SCORM 2004-specific API.
 
         scorm.version = "2004"; //Set version
-        API = win.API_1484_11;
+        API = win["API_1484_11"];
 
-      } else if (win.API) { //SCORM 1.2-specific API
+      } else if (win["API"]) { //SCORM 1.2-specific API
 
         scorm.version = "1.2"; //Set version
-        API = win.API;
+        API = win["API"];
 
       }
 
@@ -346,18 +346,18 @@ cr.plugins_.scormc2 = function(runtime) {
 
     API = find(win);
 
-    if (!API && win.parent && win.parent != win) {
-      API = find(win.parent);
+    if (!API && win["parent"] && win["parent"] != win) {
+      API = find(win["parent"]);
     }
 
-    if (!API && win.top && win.top.opener) {
-      API = find(win.top.opener);
+    if (!API && win["top"] && win["top"]["opener"]) {
+      API = find(win["top"]["opener"]);
     }
 
     //Special handling for Plateau
     //Thanks to Joseph Venditti for the patch
-    if (!API && win.top && win.top.opener && win.top.opener.document) {
-      API = find(win.top.opener.document);
+    if (!API && win["top"] && win["top"]["opener"] && win["top"]["opener"]["document"]) {
+      API = find(win["top"]["opener"]["document"]);
     }
 
     if (API) {
@@ -429,10 +429,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
         switch (scorm.version) {
           case "1.2":
-            success = makeBoolean(API.LMSInitialize(""));
+            success = makeBoolean(API["LMSInitialize"](""));
             break;
           case "2004":
-            success = makeBoolean(API.Initialize(""));
+            success = makeBoolean(API["Initialize"](""));
             break;
         }
 
@@ -581,10 +581,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
           switch (scorm.version) {
             case "1.2":
-              success = makeBoolean(API.LMSFinish(""));
+              success = makeBoolean(API["LMSFinish"](""));
               break;
             case "2004":
-              success = makeBoolean(API.Terminate(""));
+              success = makeBoolean(API["Terminate"](""));
               break;
           }
 
@@ -649,10 +649,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
         switch (scorm.version) {
           case "1.2":
-            value = API.LMSGetValue(parameter);
+            value = API["LMSGetValue"](parameter);
             break;
           case "2004":
-            value = API.GetValue(parameter);
+            value = API["GetValue"](parameter);
             break;
         }
 
@@ -735,10 +735,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
         switch (scorm.version) {
           case "1.2":
-            success = makeBoolean(API.LMSSetValue(parameter, value));
+            success = makeBoolean(API["LMSSetValue"](parameter, value));
             break;
           case "2004":
-            success = makeBoolean(API.SetValue(parameter, value));
+            success = makeBoolean(API["SetValue"](parameter, value));
             break;
         }
 
@@ -802,10 +802,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
         switch (scorm.version) {
           case "1.2":
-            success = makeBoolean(API.LMSCommit(""));
+            success = makeBoolean(API["LMSCommit"](""));
             break;
           case "2004":
-            success = makeBoolean(API.Commit(""));
+            success = makeBoolean(API["Commit"](""));
             break;
         }
 
@@ -906,10 +906,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
       switch (scorm.version) {
         case "1.2":
-          code = parseInt(API.LMSGetLastError(), 10);
+          code = parseInt(API["LMSGetLastError"](), 10);
           break;
         case "2004":
-          code = parseInt(API.GetLastError(), 10);
+          code = parseInt(API["GetLastError"](), 10);
           break;
       }
 
@@ -945,10 +945,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
       switch (scorm.version) {
         case "1.2":
-          result = API.LMSGetErrorString(errorCode.toString());
+          result = API["LMSGetErrorString"](errorCode.toString());
           break;
         case "2004":
-          result = API.GetErrorString(errorCode.toString());
+          result = API["GetErrorString"](errorCode.toString());
           break;
       }
 
@@ -983,10 +983,10 @@ cr.plugins_.scormc2 = function(runtime) {
 
       switch (scorm.version) {
         case "1.2":
-          result = API.LMSGetDiagnostic(errorCode);
+          result = API["LMSGetDiagnostic"](errorCode);
           break;
         case "2004":
-          result = API.GetDiagnostic(errorCode);
+          result = API["GetDiagnostic"](errorCode);
           break;
       }
 

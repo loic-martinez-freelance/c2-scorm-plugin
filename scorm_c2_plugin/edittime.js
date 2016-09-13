@@ -3,7 +3,7 @@ function GetPluginSettings()
 	return {
 		"name":			"Scorm C2",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
 		"id":			"scormc2",				// this is used to identify this plugin and is saved to the project; never change it
-		"version":		"0.1",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
+		"version":		"1.0",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
 		"description":	"A Scorm 1.2 and 2004 Plugin for Construct 2",
 		"author":		"Loïc Martinez",
 		"help url":		"",
