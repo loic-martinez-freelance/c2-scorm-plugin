@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1' standalone = 'yes'?>
+<manifest identifier="Manifest" version="1.1"
+	xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+	xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+	xmlns:imsmd="http://www.imsproject.org/xsd/imsmd_rootv1p2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd          http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd          http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+	<metadata>
+		<schema>ADL SCORM</schema>
+		<schemaversion>1.2</schemaversion>
+		<adlcp:location>imsmanifest.xml.xml</adlcp:location>
+	</metadata>
+	<organizations default="B0">
+		<organization identifier="B0" structure="hierarchical">
+			<title>Organization title</title>
+			<item identifier="A0" identifierref="R_A0">
+				<title>Scorm C2 Tutorial</title>
+				<metadata>
+					<schema>ADL SCORM</schema>
+					<schemaversion>1.2</schemaversion>
+					<imsmd:lom>
+						<imsmd:general>
+							<imsmd:description>
+								<imsmd:langstring xml:lang="x-none">
+									
+								</imsmd:langstring>
+							</imsmd:description>
+						</imsmd:general>
+						<imsmd:annotation>
+							<imsmd:description>
+								<imsmd:langstring>
+									Optional
+								</imsmd:langstring>
+							</imsmd:description>
+						</imsmd:annotation>
+					</imsmd:lom>
+				</metadata>
+				<adlcp:maxtimeallowed>
+					0000:00:00.00
+				</adlcp:maxtimeallowed>
+				<adlcp:timelimitaction>
+					continue,no message
+				</adlcp:timelimitaction>
+				<adlcp:masteryscore>60</adlcp:masteryscore>
+			</item>
+		</organization>
+	</organizations>
+	<resources>
+
+		<resource identifier="R_A0" type="webcontent"
+			adlcp:scormtype="sco" href="index.html">
+			<file href="index.html" />
+		</resource>
+
+	</resources>
+</manifest>
