@@ -8,9 +8,7 @@ Copy the "scorm_c2_plugin" in your construct2\exporters\html5\plugins folder
 
 ## Usage
 
-TODO: Write usage instructions
-
-An example of use is avaiable.
+[Documentation](https://github.com/Mimiste/c2-scorm-plugin/wiki)
 
 ## Credits
 
