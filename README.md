@@ -20,6 +20,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Donation
 
-Coding takes time! Feel free to offer me a coffee (or a beer, I like both :) )
-Thanks!
-[Paypal Link for Donation :)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7AKR7XEE34ESC)
+If this helped you achieving what you wanted, you can support my work by donating.
+[Paypal Link for Donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7AKR7XEE34ESC)
+Thanks :)
